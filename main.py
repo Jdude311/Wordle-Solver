@@ -30,12 +30,18 @@ for word in words:
         pos += 1
 
 # Sort by highest word scores
-wordscores = list(sorted(wordscores.items(), key=lambda item: item[1], reverse = True))
+wordscores = list(sorted(wordscores.items(), key=lambda item: item[1]))
+
+mostcommon = list(open("mostcommon5.txt", "r"))
+for i in range(len(mostcommon)):
+    mostcommon[i] = mostcommon[i].strip("\n")
 
 def displaywords():
     # Print out top 20 words
-    for i in range(min(len(wordscores),20)):
-            print(str(i + 1) + ": " + wordscores[i][0] + " at score " + str(wordscores[i][1]))
+    top = wordscores[len(wordscores)-20:]
+    top.sort(key=lambda word: mostcommon.index(word[0]) if mostcommon.count(word[0]) > 0 else 99999999999)
+    for i in range(len(top)-1, -1, -1):
+            print(str(i+1) + ": " + top[i][0] + " at score " + str(top[i][1]))
 
 # Take input
 while True:
