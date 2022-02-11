@@ -1,0 +1,12 @@
+* Wordle Solver
+Solves wordle (mostly) for you. Suggests the best wordle word based on the number of occurrences of letters in certain positions in words.
+
+Has never failed me in about 50-60 trials in [[https://wordleunlimited.com][Wordle Unlimited]] and about 3 on regular Wordle, although there are sometimes close calls when you get a lot of words with the same structure and one different letter since its strategy is to have the max probability of getting green squares.
+
+I know that the code is a burning pile of trash. I threw this together in like a few hours here and there in between classes.
+
+* TODO Add features
+- [ ] Secondary word popularity sort
+- [ ] QoL/UI improvements
+  + [ ] Undo
+  + [ ] Restart
